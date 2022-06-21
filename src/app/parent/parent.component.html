@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill">
+  <mat-label>Select a name</mat-label>
+  <mat-select (selectionChange)="getId($event.value)">
+    <mat-option *ngFor="let parent of parents" [value]="parent.Id" >
+      {{parent.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-child *ngIf="selectedId" [id]="selectedId"></app-child>
